@@ -10,6 +10,22 @@ def parse_equation(user_input):
     # 2. Operator with optional spaces around
     # 3. Zero or more sequences of operators,
     # followed by numbers with optional % signs.
+    if user_input[0] in '+*/%':
+        msg = ('Invalid characters or format in input: \n'
+               + user_input + '\n'
+               + "Equation cannot start with '+', '*', '/', or '%'")
+        raise ValueError(msg)
+    if user_input[0] == '-' and (len(user_input) == 1 or not re.match(number_pattern, user_input[1])):
+        msg = ('Invalid characters or format in input: \n'
+               + user_input + '\n'
+               + "Equation cannot start with '-' followed by an operator or '%'")
+        raise ValueError(msg)
+    if user_input[-1] in '+-*/':
+        msg = ('Invalid characters or format in input: \n'
+               + user_input + '\n'
+               + 'Equation cannot end with an operator')
+        raise ValueError(msg)
+
     valid_pattern = r'^' + number_pattern + r'%?' \
                     + r'(?:\s*' + operator_pattern + r'\s*' \
                     + number_pattern + r'%?' + r')*$'
@@ -19,8 +35,7 @@ def parse_equation(user_input):
                + user_input + '\n'
                + 'Only numerical values '
                  'and the following operators: \n'
-                 '+, -, *, /, % are allowed\n'
-               + 'Please enter a new equation')
+                 '+, -, *, /, % are allowed')
         raise ValueError(msg)
 
     # Update patterns
@@ -41,10 +56,7 @@ def parse_equation(user_input):
                         and match == '-'):
                     msg = ('Invalid characters or format in input: \n'
                            + user_input + '\n'
-                           + 'Only numerical values '
-                           'and the following operators: \n'
-                           '+, -, *, /, % are allowed\n'
-                           + 'Please enter a new equation')
+                           + 'Two operators in a row are not allowed')
                     raise ValueError(msg)
                 continue
             else:

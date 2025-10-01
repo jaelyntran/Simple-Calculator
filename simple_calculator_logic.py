@@ -40,11 +40,11 @@ def parse_equation(user_input):
                 if not (re.match(number_pattern, matches[i + 1])
                         and match == '-'):
                     msg = ('Invalid characters or format in input: \n'
-                            + user_input + '\n'
-                            + 'Only numerical values '
-                              'and the following operators: \n'
-                              '+, -, *, /, % are allowed\n'
-                            + 'Please enter a new equation')
+                           + user_input + '\n'
+                           + 'Only numerical values '
+                           'and the following operators: \n'
+                           '+, -, *, /, % are allowed\n'
+                           + 'Please enter a new equation')
                     raise ValueError(msg)
                 continue
             else:
@@ -65,7 +65,7 @@ def parse_equation(user_input):
                 prev_was_operator = False
             else:
                 parsed_expression.append(float(match))
-    print("Parsed Expression:", parsed_expression)  # Debugging line
+    # print("Parsed Expression:", parsed_expression)  # Debugging line
     return parsed_expression
 
 

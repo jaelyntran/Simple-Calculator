@@ -2,7 +2,7 @@ from simple_calculator_ui import SimpleCalculator
 # import simple_calculator_logic
 
 
-#def main():
+#def logic_test():
     #user_input = input('Enter an equation: ')
     #while user_input != '':
         #try:

@@ -6,7 +6,7 @@ This project contains a lightweight, GUI-based calculator built with Python and 
    
 2. After cloning, navigate to the new directory ```cd Simple-Calculator```
 
-3. Run the calculator ```python main.py```
+3. Run the calculator locally ```python main.py```
 
 ## How It works
 -
@@ -16,7 +16,7 @@ This project contains a lightweight, GUI-based calculator built with Python and 
 - Perform addition, subtraction, multiplication, division.
 - Handle percentages (e.g., 50% converts to 0.5 automatically).
 - Support negative numbers and decimal values.
-- Keep a history of the last 5 calculations.
+- Keep a history of the last 5 calculations using local storage.
 - Intuitive and responsive GUI with simple styling.
 
 ## Known Issues / Limitations

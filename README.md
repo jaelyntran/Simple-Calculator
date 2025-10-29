@@ -1,5 +1,6 @@
 # Simple-Calculator
 This project contains a lightweight, GUI-based calculator built with Python and Tkinter that supports basic arithmetic operations and a history panel.
+
 ![Demo image of SleepTracker home page](SimpleCalculator.png)
 
 ## Installation
